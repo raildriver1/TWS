@@ -1424,16 +1424,6 @@ begin
           BASS_ChannelPlay(Ogr_Speed_KLUB, True); BASS_ChannelSetAttribute(Ogr_Speed_KLUB, BASS_ATTRIB_VOL, trcBarLocoClicksVol.Position/100);
        except end;
     end;
-
-    // === БЛОК смена показания светофора === //
-    if (cbBLOKSounds.Checked=True) and (Svetofor<>PrevSvetofor) then begin
-       try
-          BASS_ChannelStop(KLUB_BEEP); BASS_StreamFree(KLUB_BEEP);
-          KLUB_BEEP := BASS_StreamCreateFile(FALSE, PChar('TWS/BLOK/block_beep.wav'), 0, 0, 0 {$IFDEF UNICODE} or BASS_UNICODE {$ENDIF});
-          BASS_ChannelPlay(KLUB_BEEP, True); BASS_ChannelSetAttribute(KLUB_BEEP, BASS_ATTRIB_VOL, trcBarLocoClicksVol.Position/100);
-       except end;
-    end;
-    
     // === БЛОК езда по ограничению ===
     if (cbBLOKSounds.Checked=True) and (isPlayOgrSpKlub=1) then begin
        try
@@ -1442,7 +1432,6 @@ begin
           BASS_ChannelPlay(Ogr_Speed_KLUB, True); BASS_ChannelSetAttribute(Ogr_Speed_KLUB, BASS_ATTRIB_VOL, trcBarLocoClicksVol.Position/100);
        except end;
     end;
-
     // === СИЛОВОЕ ОБОРУДОВАНИЕ ЛОКОМОТИВА(БВ, ФР) === //
     if isPlayLocoPowerEquipment=False then begin
        //try

@@ -3,7 +3,7 @@ object FormMain: TFormMain
   Top = 155
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = 'TWS 2.9.1'
+  Caption = 'TWS 2.9 b2801_1'
   ClientHeight = 474
   ClientWidth = 321
   Color = clCream
@@ -921,7 +921,7 @@ object FormMain: TFormMain
         OnClick = cbKLUBSoundsClick
       end
       object cbBLOKSounds: TCheckBox
-        Left = 5
+        Left = 3
         Top = 49
         Width = 97
         Height = 17
