@@ -579,6 +579,14 @@ object FormMain: TFormMain
         ScrollBars = ssVertical
         TabOrder = 0
       end
+      object CheckBox1: TCheckBox
+        Left = 24
+        Top = 48
+        Width = 97
+        Height = 50
+        Caption = 'CheckBox1'
+        TabOrder = 1
+      end
     end
   end
   object groupBoxSOVIDescription: TGroupBox
