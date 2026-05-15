@@ -27,6 +27,7 @@ uses
   EP1M in 'src\loc\EP1M\EP1M.pas',
   ES5K in 'src\loc\2ES5K\ES5K.pas',
   ED4M in 'src\loc\ED4M\ED4M.pas',
+  RA3 in 'src\loc\RA3\RA3.pas',
   ED9M in 'src\loc\ED9M\ED9M.pas',
   KVT254 in 'src\kvt254\KVT254.pas',
   VR242 in 'src\vr242\VR242.pas',

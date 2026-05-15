@@ -29,7 +29,7 @@ uses
   EncdDecd, SAVP, RAMMemModule, FileManager, ExtraUtils, SoundManager, Debug,
   bass_fx, UnitSOVIHelp, UnitSoundRRS, CHS8, CHS4KVR, CHS7, CHS4T, VL80T,
   ES5K, EP1M, ED4M, ED9M, CHS2K, sl2m, VL82M, CHS4, TE10U, M62, VL85,
-  TEM18dm, TEP70, TEP70bs, VL11M, SoundRes, Camera;
+  TEM18dm, TEP70, TEP70bs, VL11M, SoundRes, Camera, RA3;
 
 type
   TFormMain = class(TForm)
@@ -243,6 +243,7 @@ var
   TEM18dm__: tem18dm_;
   TEP70__: tep70_;
   TEP70bs__: tep70bs_;
+  RA3__: ra3_;
 
   SL2M__: sl2m_;
 
@@ -714,6 +715,7 @@ begin
   TEM18dm__ := tem18dm_.Create;
   TEP70__ := tep70_.Create;
   TEP70bs__ := tep70bs_.Create;
+  RA3__ := ra3_.Create;
 
   isGameOnPause := True;
 
@@ -970,6 +972,9 @@ try
          if Freight=1 then RadioButton2.Checked:=True else RadioButton1.Checked:=True;
 
          if naprav='1' then naprav:='Tuda' else naprav:='Obratno';
+
+         // РА-3: детект по подстроке "RA3" в имени локомотива (settings.ini)
+         if Pos('RA3', UpperCase(LocoGlobal)) > 0 then LocoGlobal := 'RA3';
 
          if LocoGlobal='3154' then LocoGlobal:='ED4M';
          if LocoGlobal='3159' then LocoGlobal:='ED9M';
@@ -1803,6 +1808,7 @@ end;
     if LocoGlobal = 'EP1m' then ep1m__.step();
     if LocoGlobal = '2ES5K' then es5k__.step();
     if LocoGlobal = 'ED4M' then ed4m__.step();
+    if LocoGlobal = 'RA3' then RA3__.step();
     if LocoGlobal = 'ED9M' then ed9m__.step();
     if LocoGlobal = '2TE10U' then te10u__.step();
     if LocoGlobal = 'M62' then m62__.step();
